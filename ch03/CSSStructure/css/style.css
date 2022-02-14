@@ -1,0 +1,113 @@
+/* 구분선 */
+div.line { border: 3px solid #000; padding: 0; margin: 50px 0;}
+
+/* tag */
+span.ctag { color: blue; }
+div.cTag { margin: 24px; padding: 48px; background-color: pink; }
+
+/* class */
+.finished { color: skyblue; }
+.important { text-decoration: underline; }
+/* 특정 태그에 해당 클래스가 있을 때 */
+li.important { background-color: yellow; }
+/* 하나 이상의 클래스 */
+.important.finished { font-style: italic; }
+
+/* id */
+section { padding: 32px; }
+/* 아래부터 */
+#intro { background-color: yellowgreen; }
+#board { background-color: pink; }
+
+/* attr(속성)선택자 */
+label { display: inline-block; width: 80px; }
+/* 아래부터 */
+/* type이 text인것 */
+input[type=text] { background-color: skyblue; }
+/* for가 ip-id인것 */
+label[for=ip-id] { color: blue; }
+  
+
+/* 자손 결합자 */
+div.dcd { padding: 24px;border: 1px solid black;background-color: white; }
+.dcd.outer { background-color: green; }
+/* 앞 선택자 뒤에 스페이스를 둠으로써 자손 요소들을 선택 */
+/* .outer div { background-color: yellow; } */
+/* 빈 공백이 아닌 > 을 넣어주면 자식(1촌 자손)만 선택 */
+.dcd.outer > div { background-color: yellow; }
+
+  
+/* 인접 형제(바로 다음 동생) 결합자 */
+div.near{ padding: 12px 24px; border-top: 1px solid black; }
+div.near.selected { border-top: 0; color: white; background-color: dodgerblue; }
+/* 아래부터 */
+div.near.selected + div { border-top: 0; background-color: blueviolet; }
+  
+
+/* 전체 선택자 */
+div.all { background-color: white; }
+/* 특정 요소의 자손/자식으로 지정하지 않으면 body 등에도 적용 */
+span.all { color: inherit; }
+section.all * { display: inline-block; background-color: orange; padding: 24px; }
+
+
+/* 부정 가상 클래스 */
+.blue { color: blue; }
+.underline { text-decoration: underline; }
+/* 아래부터 */
+.underline:not(.blue) { color: red; }
+.underline:not(.blue):not(li) { color: inherit; }
+
+
+/* 순서 관련 가상 클래스 */
+ul.viture { padding: 0; }
+ul.viture li.viture { list-style: none; padding: 8px 16px; border-top: 1px solid lightgray; }
+/* 아래부터 */
+ul.viture li.viture:first-child { border-top: 2px solid black; }
+ul.viture li.viture:last-child { border-bottom: 2px solid black; }
+ul.viture li.viture:nth-child(3) { color: purple; }
+/* 짝수만 */
+ul.viture li.viture:nth-child(even) { background-color: #eee; }
+/* 첫칸부터 3칸씩 */
+ul.viture li.viture:nth-child(3n+1) { text-decoration: underline; }
+
+
+/* 마우스오버 가상 클래스 */
+.blue-button 
+{
+    font-size: 1em;
+    padding: 16px 24px;
+    color: white;
+    background-color: dodgerblue;
+    border: 0;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.blue-button:hover { background-color: darkblue; }
+div.cHover 
+{
+    position: relative; 
+    display: inline-block;
+    color: white; 
+    background-color: tomato;
+    height: 56px; 
+    line-height: 56px; 
+    padding: 0 24px;
+    cursor: pointer;
+}
+div.cHover ul 
+{
+    display: none;
+    position: absolute;
+    width: 100px; 
+    left: 12px; 
+    top: 56px; 
+    margin: 0; 
+    padding: 0;
+}
+/* 아래부터 */
+div.cHover:hover ul { display: block; }
+div.cHover ul li { background-color: #444; height: 44px; line-height: 44px; text-align: center; }  
+/* 아래부터 */
+div.cHover ul li:hover { background-color: #222; }
+  
