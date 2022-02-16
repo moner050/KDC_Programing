@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
+/* 구분선 */
+div.nextLine { margin: 28px 0; border: 3px solid #000; }
+
+/* 글자 폰트 */
+span.nanum {font-family: 'Nanum Pen Script';}
+
+/* 글자 굵기, 색, 스타일, 사이즈 */
+span.ioTestOuter 
+{ 
+    font-size: 24px;
+    /* font-size: 1.5em;  */
+    /* font-size: 1.5rem; */
+    font-weight: 900;
+    font-style: italic;
+    color: #cc542d;
+}
+span.ioTestMiddle { font-style: normal; color: #5f12f4; }
+span.ioTestInner { text-decoration: underline;  color: #88ff22; }
+
+/* 글자에 선 긋기 */
+span.none { text-decoration: none; }
+span.underline { text-decoration: underline; }
+span.overline { text-decoration: overline; }
+span.line-through { text-decoration: line-through; }
+
+/* 자간 조정 */
+span.letter-spacing { letter-spacing: 0.1em; }
+
+/* 텍스트, 행간 정렬 */
+p.text-align
+{ 
+    /* text-align: left;  */
+    /* text-align: right; */
+    /* 중앙정렬 */
+    /* text-align: center; */
+    /* 정갈하게 정렬 */
+    text-align: justify;
+    /* 행간 정렬 */
+    line-height: 24px;
+}
+
+/* ul목록의 불릿 없에기 */
+ul.remove-style { list-style: none; padding: 0;}
+  
+
+/* 불투명도 */
+span.opacity { opacity : 0.5; }
