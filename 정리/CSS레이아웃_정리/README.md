@@ -1,4 +1,4 @@
-# CSS 레이아웃
+# >CSS 레이아웃
 
 ## position : 위치 관련 스타일
 <br>  
@@ -8,14 +8,14 @@
 
 <br>
 
-HTML
+>HTML
 ~~~
   <span>SPAN 1</span>
   <span>SPAN 2</span>
   <span>SPAN 3</span>
   <span>SPAN 4</span>
 ~~~
-CSS
+>CSS
 ~~~
     span 
     {
@@ -34,7 +34,7 @@ CSS
 
 <br>
 
-CSS
+>CSS
 ~~~
     span { position: relative; }
     span:nth-child(1) { top: 12px; }
@@ -52,14 +52,14 @@ CSS
 
 <br>
 
-HTML
+>HTML
 ~~~
   <div class="relative">
     <div class="absolute _1"></div>
     <div class="absolute _2"></div>
   </div>
 ~~~
-CSS
+>CSS
 ~~~
     div 
     {
@@ -97,12 +97,12 @@ CSS
 
 <br>
 
-HTML
+>HTML
 ~~~
   <div class="tall"></div>
   <div class="fixed"></div>
 ~~~
-CSS
+>CSS
 ~~~
     .tall 
     {
@@ -131,7 +131,7 @@ CSS
 
 <br>
 
-HTML
+>HTML
 ~~~
   <div>
     <div>DIV 요소</div>
@@ -139,7 +139,7 @@ HTML
     <p>P 요소</p>
   </div>
 ~~~
-CSS
+>CSS
 ~~~
 /* 기본 세팅 */
 body > div > * { background-color: yellowgreen; }
@@ -167,7 +167,7 @@ body > div>  * { display: inline-block; }
 
 <br>
 
-HTML
+>HTML
 ~~~
 body > div > * 
 {
@@ -178,7 +178,7 @@ body > div > *
 ~~~
 > 아래부터
 
-CSS
+>CSS
 ~~~
 body > div > span { display: none; }
 ~~~
@@ -191,7 +191,7 @@ body > div > span { opacity: 0; }
 ---
 <br>
 
-## CSS 그리드 레이아웃
+## >CSS 그리드 레이아웃
 
 <br>
 
@@ -199,7 +199,7 @@ body > div > span { opacity: 0; }
 
 <br>
 
-HTML
+>HTML
 ~~~
   <div class="wrapper">
     <div>1</div>
@@ -213,7 +213,7 @@ HTML
     <div>9</div>
   </div>
 ~~~
-CSS
+>CSS
 ~~~
 /* 기본세팅 */
 body { margin: 0; padding: 0; }
@@ -283,7 +283,7 @@ body { margin: 0; padding: 0; }
 
 <br>
 
-HTML
+>HTML
 ~~~
   <div class="wrapper">
     <div><div>1</div></div>
@@ -297,7 +297,7 @@ HTML
     <div><div>9</div></div>
   </div>
 ~~~
-CSS
+>CSS
 ~~~
 /* 전용 세팅 */
 .wrapper { grid-template-columns: repeat(3, 1fr); }
@@ -318,7 +318,7 @@ CSS
 
 <br>
 
-HTML
+>HTML
 ~~~
   <div class="wrapper">
     <div></div>
@@ -328,7 +328,7 @@ HTML
     <div></div>
   </div>
 ~~~
-CSS
+>CSS
 ~~~
 /* 기본 세팅 */
 .wrapper 
@@ -379,7 +379,7 @@ CSS
 
 <br>
 
-HTML
+>HTML
 ~~~
   <div class="wrapper">
     <div></div>
@@ -389,7 +389,7 @@ HTML
     <div></div>
   </div>
 ~~~
-CSS
+>CSS
 ~~~
 .wrapper 
 {
