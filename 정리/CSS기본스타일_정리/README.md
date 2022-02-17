@@ -24,7 +24,7 @@
 |em|상대 크기 : 바로 윗 부모의 크기에 비례|중첩마다 제곱|
 |rem|상대 크기 : 최상위 조상의 크기에 비례|일반적으로 body의 글자 크기 : 16px|
 
-HTML
+>HTML
 ~~~
   일반 텍스트
   <span>바깥쪽 span
@@ -35,7 +35,7 @@ HTML
   </span>
 ~~~
 
-CSS
+>CSS
 ~~~
 span { font-size: 24px; }
 ~~~
@@ -58,7 +58,7 @@ span { font-size: 1.5rem; }
 |bold|두껍게|700, 자주 사용됨|
 |lighter, bolder|상속보다 얇거나 두껍게|정도는 상속된 값마다 다름|
 
-CSS
+>CSS
 ~~~
 span { font-weight: 900; }
 ~~~
@@ -86,12 +86,12 @@ span { font-weight: bolder; }
 
 <br>
 
-HTML
+>HTML
 ~~~
 일반 텍스트 <span>글자색 적용</span>
 ~~~
 
-CSS
+>CSS
 ~~~
 span { color: blue; }
 ~~~
@@ -112,14 +112,14 @@ span { color: #FF0000 }
 ### <b>text-decoration</b> : 글자에 선 긋기
 <br>
 
-HTML
+>HTML
 ~~~
   <span>일반</span>
   <span class="underline">밑줄</span>
   <span class="overline">윗줄</span>
   <span class="line-through">취소선</span>
 ~~~
-CSS
+>CSS
 ~~~
 .none { text-decoration: none; }
 .underline { text-decoration: underline; }
@@ -132,12 +132,12 @@ CSS
 ### <b>letter-spacing</b> : 자간 조정
 <br>
 
-HTML
+>HTML
 ~~~
   일반 텍스트
   <span>자간이 조정된 텍스트</span>
 ~~~
-CSS
+>CSS
 ~~~
 span { letter-spacing: 0.1em; }
 ~~~
@@ -150,14 +150,14 @@ left | right | center | justify
 
 <br>
 
-HTML
+>HTML
 ~~~
   <p>
     Cascading Style Sheets(CSS)는 HTML이나 XML(SVG, XHTML 같은 XML 방언(dialect) 포함)로 작성된 문서의 표현을 기술하기 위해 쓰이는 스타일시트 언어입니다. CSS는 요소가 화면, 종이, 음성이나 다른 매체 상에 어떻게 렌더링되어야 하는지 기술합니다.<br>
     CSS는 오픈 웹의 핵심 언어 중 하나이며 여러 브라우저가 표준으로 사용하는 W3C 명세가 있습니다. 레벨 단위로 개발한 CSS1은 더 이상 사용하지 않고, 다음 레벨인 CSS2.1은 권고안(recommendation)입니다. 더 작은 모듈로 나눈 CSS3은 표준화 과정을 밟고 있습니다.
   </p>
 ~~~
-CSS
+>CSS
 ~~~
 /* left, right, center, justify */
 p { text-align: left; }
@@ -168,7 +168,7 @@ p { text-align: left; }
 ### <b>line-height</b> : 행간
 <br>
 
-CSS
+>CSS
 ~~~
 p { line-height: 24px; }
 ~~~
@@ -187,7 +187,7 @@ p { line-height: 125%; }
 ### <b>list-style</b> : ul 목록의 불릿 없애기
 <br>
 
-HTML
+>HTML
 ~~~
   <ul>
     <li>못생긴</li>
@@ -195,7 +195,7 @@ HTML
     <li>이제 그만</li>
   </ul>
 ~~~
-CSS
+>CSS
 ~~~
 ul 
 { 
@@ -209,11 +209,11 @@ ul
 ### <b>opacity</b> : 불투명도
 <br>
 
-HTML
+>HTML
 ~~~
   <span>오퍼시티가 적용된 요소</span>
 ~~~
-CSS
+>CSS
 ~~~
 span { opacity: 0.5; }
 ~~~
@@ -236,13 +236,13 @@ span { opacity: 0.5; }
 |vmin|상대 크기 : 뷰포트 너비, 높이 중 짧은 쪽의 1/100|
 <br>
 
-HTML
+>HTML
 ~~~
   <div class="outer">
     <div class="inner"></div>
   </div>
 ~~~
-CSS
+>CSS
 ~~~
 /* 기본 세팅 */
 body 
@@ -300,7 +300,7 @@ body
 ### <b>margin</b> : 바깥쪽 여백
 <br>
 
-HTML
+>HTML
 ~~~
   <div class="outer">
     <div class="inner">inner div</div>
@@ -308,7 +308,7 @@ HTML
     <div class="inner">inner div</div>
   </div>
 ~~~
-CSS
+>CSS
 ~~~
 /* 기본 세팅 */
 body 
@@ -367,7 +367,7 @@ body
 ### <b>padding</b> : 안쪽 여백
 <br>
 
-CSS
+>CSS
 ~~~
 .outer 
 {
@@ -407,11 +407,11 @@ CSS
 |dashed|점이 긴 점선|
 |dotted|점선|
 
-HTML
+>HTML
 ~~~
   <div>테두리가 있는 div</div>
 ~~~
-CSS
+>CSS
 ~~~
 /* 기본 세팅 */
 div 
@@ -442,11 +442,11 @@ div
 
 ### <b>border-radius</b> : 둥근 모서리
 
-HTML
+>HTML
 ~~~
   <div>둥근 모서리</div>
 ~~~
-CSS
+>CSS
 ~~~
 /* 기본 세팅 */
 div 
@@ -492,11 +492,11 @@ div
 |background-position|배경 이미지 위치|
 |background-repeat|배경 이미지 반복 여부|
 
-HTML
+>HTML
 ~~~
   <div></div>
 ~~~
-CSS
+>CSS
 ~~~
 /* 기본 세팅 */
 div 
@@ -564,11 +564,11 @@ div
 
 - box-shadow: (x축 위치) (y축 위치) ( [옵션] 번짐) (색상)
 
-HTML
+>HTML
 ~~~
   <div></div>
 ~~~
-CSS
+>CSS
 ~~~
 /* 기본 세팅 */
 body { background-color: lightgray; }
