@@ -38,7 +38,7 @@ CSS 코드 사용방법
 ~~~
 3. 별도의 CSS 파일에 분리해 사용  
 
-HTML파일
+>HTML
 ~~~
 <head>
 
@@ -53,7 +53,7 @@ HTML파일
 </body>
 ~~~
   
-CSS 파일  
+>CSS 
 ~~~
 span 
 {
@@ -69,14 +69,16 @@ span
 - ## 선택자의 종류
   - ### tag 선택자
     - 문서 내 지명된 모든 태그에 적용  
+  
+<br>
 
-HTML
+>HTML
   ~~~
   <span>파랑색 글자</span>입니다.
 
   <div>안팍의 여백이 적용된 분홍 배경의 div 입니다.</div>
   ~~~
-CSS
+>CSS
   ~~~
   span { color: blue; }
 
@@ -89,10 +91,14 @@ CSS
   ~~~
 
 ---------------
+<br>
+
 - ### class 선택자
   - 문서 내 다수 요소에 동일하게 적용될 수 있는 class 속성에 따라 적용   
 
-HTML
+<br>
+
+>HTML
   ~~~
   <h1 class="important">할 일 목록</h1>
   <ul>
@@ -103,7 +109,7 @@ HTML
     <li class="finished important">코딩 강좌 실습</li>
   </ul>
   ~~~
-CSS
+>CSS
   ~~~
   .finished { color: skyblue; }
   .important { text-decoration: underline; }
@@ -115,11 +121,16 @@ CSS
   .important.finished { font-style: italic; }
   ~~~
 ---------------
+
+<br>
+
 - ### id 선택자
   - 문서 내 유일한 요소에 적용될 수 있는 id 속성에 따라 적용
     - 하나 이상 사용 시 자바스크립트 등에서 오류 소지
   
-HTML
+<br>
+
+>HTML
   ~~~
   <section id="intro">
     소개 섹션
@@ -128,7 +139,7 @@ HTML
     게시판 섹션
   </section>
   ~~~
-CSS
+>CSS
   ~~~
   section { padding: 32px; }
 
@@ -137,10 +148,15 @@ CSS
   #board { background-color: pink; }
   ~~~
 ------------------------
+<br>
+
 - ### attr(속성) 선택자
   - 태그의 속성과 그 값에 따라 적용  
+  
+<br>
 
-HTML
+
+>HTML
   ~~~
   <label for="ip-id">아이디</label>
   <input id="ip-id" type="text"/>
@@ -151,7 +167,7 @@ HTML
   <label for="ip-nm">이름</label>
   <input id="ip-nm" type="text"/>
   ~~~
-CSS
+>CSS
   ~~~
   label 
   {
@@ -164,11 +180,17 @@ CSS
   label[for=ip-id] { color: blue; }
   ~~~
 -------------------------
+
+<br>
+
 ## 결합자
 - ### 자손 결합자
   - 내부의 모든 요소들을 선택
   
-HTML
+  
+<br>
+
+>HTML
   ~~~
   <div class="outer">
     <div>
@@ -182,7 +204,7 @@ HTML
     </div>
   </div>
   ~~~
-CSS
+>CSS
 ~~~
 div 
 {
@@ -199,10 +221,15 @@ div
 }
 ~~~
   
+<br>
+
 - ### 자식 결합자
   - 바로 안 단계 요소들을 선택
   
-CSS
+<br>
+
+  
+>CSS
 ~~~
   /* 자손 결합자 코드에서 수정 */
   /* 빈 공백이 아닌 > 을 넣어주면 자식(1촌 자손)만 선택 */
@@ -212,10 +239,15 @@ CSS
   }
 ~~~
 
+<br>
+
 - ### 인접 형제(바로 다음 동생) 결합자
   - 바로 안 단계의 요소들을 선택
+  
+<br>
 
-HTML
+
+>HTML
 ~~~
   <div>첫줄</div>
   <div>둘째줄</div>
@@ -223,7 +255,7 @@ HTML
   <div>넷째줄</div>
   <div>다섯째 줄</div>
 ~~~
-CSS
+>CSS
 ~~~
 div 
 {
@@ -242,10 +274,17 @@ div
 ~~~
 
 ----------------
+
+<br>
+
 ## 전체 선택자
   -  모든 태그에 적용
+
   
-HTML
+<br>
+
+  
+>HTML
 ~~~
  <section>
     <h1>제목</h1>
@@ -257,7 +296,7 @@ HTML
     일반 텍스트
   </section>
 ~~~
-CSS
+>CSS
 ~~~
 div { background-color: white; }
 
@@ -270,9 +309,15 @@ section *
 }
 ~~~
 ----------------
+
+<br>
+
 ## psudo(가상) 클래스
+
+<br>
+
   
-HTML
+>HTML
 ~~~
 <h1 class="underline">부정 가상 클래스 사용예</h1>
 <ul>
@@ -282,7 +327,7 @@ HTML
   <li class="underline">파랑글씨는 아닌데 및줄</li>
 </ul>
 ~~~
-CSS
+>CSS
 ~~~
 .blue { color: blue; }
 .underline { text-decoration: underline; }
@@ -292,9 +337,15 @@ CSS
 .underline:not(.blue):not(li) { color: inherit; }
 ~~~
 -----------------
+
+<br>
+
 ## 순서 관련 가상 클래스
 
-HTML
+<br>
+
+
+>HTML
 ~~~
   <ul>
     <li>첫번째 글</li>
@@ -307,7 +358,7 @@ HTML
     <li>여덟번째 글</li>
   </ul>
 ~~~
-CSS
+>CSS
 ~~~
 ul { padding: 0; }
 ul li 
@@ -325,9 +376,15 @@ ul li:nth-child(even) { background-color: #eee; }
 ul li:nth-child(3n+1) { text-decoration: underline; }
 ~~~
 -----------------
+
+<br>
+
 ## 마우스 오버 가상 클래스
+
+<br>
+
   
-HTML
+>HTML
 ~~~
   <button class="blue-button">
     클릭
@@ -344,7 +401,7 @@ HTML
     </ul>
   </div>
 ~~~
-CSS
+>CSS
 ~~~
 .blue-button 
 {
@@ -388,6 +445,9 @@ div ul li
 div ul li:hover { background-color: #222; }
 ~~~
 ----------------------
+
+<br>
+
 ## 우선순위
 - 인라인 스타일 > id 선택자 > class 선택자 > 태그 선택자
 - 구체적일수롶 높은 순위
