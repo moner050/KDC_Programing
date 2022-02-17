@@ -63,31 +63,28 @@ CSS
 ~~~
     div 
     {
-    width: 400px;
-    height: 400px;
+      width: 400px;
+      height: 400px;
     }
     .relative 
     {
-    position: relative;
-    background-color: green;
+      position: relative;
+      background-color: green;
     }
-    .absolute 
-    {
-    position: absolute;
-    }
+    .absolute { position: absolute; }
     .absolute._1 
     {
-    top: 100px;
-    left: 25%;
-    background-color: red;
-    z-index: 2;
+      top: 100px;
+      left: 25%;
+      background-color: red;
+      z-index: 2;
     }
     .absolute._2 
     {
-    top: 200px;
-    left: 50%;
-    background-color: blue;
-    z-index: 1;
+      top: 200px;
+      left: 50%;
+      background-color: blue;
+      z-index: 1;
     }
 ~~~
 ---
@@ -109,19 +106,19 @@ CSS
 ~~~
     .tall 
     {
-    margin: 48px;
-    width: 200px;
-    height: 5000px;
-    background-color: yellowgreen;
+      margin: 48px;
+      width: 200px;
+      height: 5000px;
+      background-color: yellowgreen;
     }
     .fixed 
     {
-    position: fixed;
-    top: 24px;
-    left: 80px;
-    width: 300px;
-    height: 100px;
-    background-color: purple;
+      position: fixed;
+      top: 24px;
+      left: 80px;
+      width: 300px;
+      height: 100px;
+      background-color: purple;
     }
 ~~~
 ---
@@ -145,10 +142,7 @@ HTML
 CSS
 ~~~
 /* 기본 세팅 */
-body > div > * 
-{
-  background-color: yellowgreen;
-}
+body > div > * { background-color: yellowgreen; }
 ~~~
 > 아래부터
 ~~~
@@ -193,4 +187,247 @@ body > div > span { visibility: hidden; }
 ~~~
 ~~~
 body > div > span { opacity: 0; }
+~~~
+---
+<br>
+
+## CSS 그리드 레이아웃
+
+<br>
+
+페이지를 구획으로 나누는 다양한 방법이다.
+
+<br>
+
+HTML
+~~~
+  <div class="wrapper">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+  </div>
+~~~
+CSS
+~~~
+/* 기본세팅 */
+body { margin: 0; padding: 0; }
+.wrapper { border: 2px solid black; }
+.wrapper > div { background-color: yellow; }
+.wrapper > div:nth-child(even) { background-color: yellowgreen;}
+~~~
+## 부모 요소를 grid 디스플레이로 설정  
+
+~~~
+.wrapper { display: grid; }
+~~~
+
+## 열의 갯수와 크기 지정해주기
+<br>
+
+> 절대값으로 해주기
+~~~
+.wrapper { grid-template-columns: 100px 200px 300px; }
+~~~
+<br>
+
+> 비율 분할(fractions)
+~~~
+.wrapper { grid-template-columns: 1fr 2fr 3fr 4fr; }
+~~~
+<br>
+
+> 혼합 사용
+~~~
+.wrapper { grid-template-columns: 200px 1fr 3fr; }
+~~~
+<br>
+
+> 반복 지정
+~~~
+.wrapper { grid-template-columns: repeat(3, 1fr); }
+~~~
+<br><br>
+
+## 행의 갯수와 크기 지정해주기
+<br>
+
+> 절대값으로 해주기
+~~~
+.wrapper 
+{
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 100px 200px 400px;
+}
+~~~
+<br>
+
+> 상대값은 높이가 지정되어 있을 때 가능
+~~~
+.wrapper 
+{
+  grid-template-columns: repeat(3, 1fr);
+  height: 800px;
+  grid-template-rows: 1fr 2fr 3fr;
+}
+~~~
+<br>
+
+---
+## 내부 컨텐츠의 높이에 따라 해주기
+
+<br>
+
+HTML
+~~~
+  <div class="wrapper">
+    <div><div>1</div></div>
+    <div><div>2</div></div>
+    <div><div>3</div></div>
+    <div><div>4</div></div>
+    <div><div>5</div></div>
+    <div><div>6</div></div>
+    <div><div>7</div></div>
+    <div><div>8</div></div>
+    <div><div>9</div></div>
+  </div>
+~~~
+CSS
+~~~
+/* 전용 세팅 */
+.wrapper { grid-template-columns: repeat(3, 1fr); }
+.wrapper > div > div { background-color: orange; }
+.wrapper > div:nth-child(even) > div { background-color: tomato; }
+.wrapper > div:nth-child(3n + 1) > div { height: 100px; }
+.wrapper > div:nth-child(3n + 2) > div { height: 200px; }
+.wrapper > div:nth-child(3n) > div { height: 300px; }
+~~~
+> 행의 크기 지정해주기
+~~~
+.wrapper { grid-template-rows: 100px auto minmax(100px, 200px); }
+~~~
+---
+<br>
+
+## 선 번호로 영역 지정 해주기
+
+<br>
+
+HTML
+~~~
+  <div class="wrapper">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+~~~
+CSS
+~~~
+/* 기본 세팅 */
+.wrapper 
+{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 150px);
+}
+.wrapper > div { background-color: yellow; }
+.wrapper > div:nth-child(even) { background-color: yellowgreen; }
+~~~
+> 아래부터
+~~~
+.wrapper > div:nth-child(1) 
+{
+  background-color: red;
+  grid-column: 1/4;
+  grid-row: 1/2;
+}
+.wrapper > div:nth-child(2) 
+{
+  background-color: green;
+  grid-column: 1/2;
+  grid-row: 2/4;
+}
+.wrapper > div:nth-child(3) 
+{
+  background-color: purple;
+  grid-column: 2/4;
+  grid-row: 2/4;
+}
+.wrapper > div:nth-child(4) 
+{
+  background-color: blue;
+  grid-column: 1/3;
+  grid-row: 4/5;
+}
+.wrapper > div:nth-child(5) 
+{
+  background-color: orange;
+  grid-column: 3/4;
+  grid-row: 4/5;
+}
+~~~
+<br>
+
+## 이름으로 영역 지정 해주기
+
+<br>
+
+HTML
+~~~
+  <div class="wrapper">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+~~~
+CSS
+~~~
+.wrapper 
+{
+  grid-template-areas: 
+    "red red red"
+    "green blue blue"
+    "green blue blue"
+    "purple purple orange";
+}
+.wrapper > div:nth-child(1) 
+{
+  background-color: red;
+  grid-area: red;
+}
+.wrapper > div:nth-child(2) 
+{
+  background-color: green;
+  grid-area: green;
+}
+.wrapper > div:nth-child(3) 
+{
+  background-color: blue;
+  grid-area: blue;
+}
+.wrapper > div:nth-child(4) 
+{
+  background-color: purple;
+  grid-area: purple;
+}
+.wrapper > div:nth-child(5) 
+{
+  background-color: orange;
+  grid-area: orange;
+}
+~~~
+<br>
+
+## grid간 공간 띄우기
+~~~
+.wrapper { gap: 10px; }
 ~~~
