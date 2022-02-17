@@ -1,0 +1,85 @@
+/* 구분선 */
+div.line { border: 3px solid #000; margin: 40px 0;}
+div.absolute-line { border: 3px solid #000; margin: 280px 0 40px 0;}
+
+/* static 요소 */
+.static-span 
+{
+    font-size: 1.2rem;
+    color: white;
+    background-color: tomato;
+    border: 2px solid firebrick;
+}
+
+
+/* relative, absolute 요소 */
+.container 
+{   
+    width: 400px; 
+    height: 400px; 
+}
+.container .relative 
+{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: green;
+}
+.container .relative .absolute 
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.container .relative .absolute._1 
+{
+    top: 100px;
+    left: 25%;
+    background-color: red;
+    z-index: 2;
+}
+.container .relative .absolute._2 
+{
+    top: 200px;
+    left: 50%;
+    background-color: blue;
+    z-index: 1;
+}
+
+/* fixed 고정 요소 */
+.tall 
+{
+margin: 48px;
+width: 200px;
+height: 1000px;
+background-color: yellowgreen;
+}
+.fixed 
+{
+position: fixed;
+top: 24px;
+right: 60px;
+width: 150px;
+height: 100px;
+background-color: purple;
+text-align: center;
+font-size: larger;
+line-height: 90px;
+color: #fff;
+}
+
+/* display 요소 */
+.display-container > * { background-color: yellowgreen; }
+/* .display-container > * { display: inline; } */
+/* .display-container > * { display: block; } */
+.display-container > * { display: inline-block; }
+
+/* 화면에 안보이게 하기 */
+/* .display-container > div { display: none; } */
+/* .display-container > span { display: none; } */
+/* .display-container > p { display: none; } */
+
+/* 요소가 화면에 있지만, 보이지 않게 하기 */
+/* .display-container > div { visibility: hidden; } */
+/* .display-container > span { visibility: hidden; } */
+/* .display-container > p { visibility: hidden; } */
