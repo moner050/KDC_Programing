@@ -1,0 +1,183 @@
+
+
+#wrap {width: 100%; height: 100%; position: relative; overflow-x: hidden;}
+
+#wrap #header 
+{
+    z-index: 2;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+    background: #ff4500;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+}
+#wrap #header .container { width: 100%; height: 100%; margin: 0 auto; display: flex;}
+#wrap #header .container .left { width: 400px; height: 64px;}
+#wrap #header .container .left .logo 
+{
+    float: left;
+    width: 400px; 
+    height: 66px; 
+    text-align: center; 
+    color: #fff; 
+    text-decoration: none; 
+    line-height: 64px; 
+    font-size: 32px; 
+    font-weight: 600;
+}
+#wrap #header .container .center {width: 1388px; height: 66px;}
+#wrap #header .container .center > nav {width: 100%;}
+#wrap #header .container .center > nav > ul {float: left; padding: 23.5px 0;}
+#wrap #header .container .center > nav > ul > li {display: inline; height: 100%; padding: 0 20px;}
+#wrap #header .container .center > nav > ul > li > a 
+{
+    color: #fff;
+    text-decoration: none;
+    font-size: 19px;
+}
+#wrap #header .container .center > nav > ul > li > a:hover {opacity: 0.67;}
+#wrap #header .container .center > nav > ul > li > a.pick {padding-bottom:14px; border-bottom: 4px solid #fff;}
+
+
+#wrap #header .container .right {float: right; margin: auto;}
+#wrap #header .container .right a {color: #fff; font-size: 25px; text-align: center; text-decoration: none; }
+
+#wrap #main 
+{
+    z-index: 1;
+    height: 100%; 
+    width: 100%;
+    padding: 64px 0 0 240px;
+    position: relative;
+}
+#wrap #main .aside 
+{
+    position: fixed;
+    width: 240px;
+    top: 64px;
+    left: 0;
+    bottom: 0;
+    background-color: #eee;
+    border-right: 1px solid #d3d3d3;
+}
+#wrap #main .aside .view-option 
+{
+    color: gray;
+    font-weight: 700;
+    font-size: 1.5em;
+    padding: 32px 0 0 32px;
+}
+#wrap #main .aside ul { margin: 32px 0; font-size: 1.25em; line-height: 1.5em; } 
+#wrap #main .aside ul li { padding: 8px 34px; text-decoration: none; color: #000; }
+#wrap #main .aside ul li:hover { background-color: #444; color: #fff; cursor: pointer; }
+#wrap #main .aside ul li.on { background-color: #ddd; color: gray; }
+
+
+#wrap #main .section-title {padding: 96px 80px; border-bottom: 1px solid #ddd;}
+#wrap #main .section-title h1 {font-size: 36px; font-weight: 700; margin: 0 0 20px 0;}
+#wrap #main .section-title p {font-size: 24px; line-height: 29px;}
+
+#wrap #main .section-gallery {padding: 16px;}
+/* 갤러리1 */
+#wrap #main .section-gallery .gal1 { display: inline-block; width: 440px; height: 395.203px; padding: 24px; box-shadow: 1px 1px 4px rgba(0, 0, 0 , 0.2); margin: 8px; border-radius: 8px;}
+#wrap #main .section-gallery .gal1:hover { box-shadow: 1px 1px 4px rgba(0, 0, 0 , 0.5); }
+#wrap #main .section-gallery .gal1 .photo1 { width: 440px; height: 320px; background: url(../img/photo1.png) no-repeat 50% 50%; background-size: cover; border-radius: 4px; margin-bottom: 8px;}
+#wrap #main .section-gallery .gal1 .info 
+{
+    display: grid;  
+    grid-template-columns: 80px 1fr;
+    grid-template-rows: 32px auto;
+    grid-template-areas: 
+        'like name'
+        'like ment';
+    margin: 20px 0 0 0;
+}
+#wrap #main .section-gallery .gal1 .info .like { grid-area: like; font-size: 2.4em; text-align: center; background: url(../img/heart_off.png) no-repeat; background-position: 50%; }
+#wrap #main .section-gallery .gal1 .info .like.on { background: url(../img/heart_on.png) no-repeat 50%; }
+#wrap #main .section-gallery .gal1 .info .like.on:hover { opacity: 0.5; cursor: pointer;}
+#wrap #main .section-gallery .gal1 .info .name { grid-area: name; font-weight: 600; font-size: 1.2em; }
+#wrap #main .section-gallery .gal1 .info .ment { grid-area: ment; font-size: 1.2em; color: #808080; }
+
+/* 갤러리2 */
+#wrap #main .section-gallery .gal2 { display: inline-block; width: 440px; height: 395.203px; padding: 24px; box-shadow: 1px 1px 4px rgba(0, 0, 0 , 0.2); margin: 8px; border-radius: 8px;}
+#wrap #main .section-gallery .gal2:hover { box-shadow: 1px 1px 4px rgba(0, 0, 0 , 0.5); }
+#wrap #main .section-gallery .gal2 .photo2 { width: 440px; height: 320px; background: url(../img/photo2.jpg) no-repeat 50% 50%; background-size: cover; border-radius: 4px; }
+#wrap #main .section-gallery .gal2 .info 
+{
+    display: grid;  
+    grid-template-columns: 80px 1fr;
+    grid-template-rows: 32px auto;
+    grid-template-areas: 
+        'like name'
+        'like ment';
+    margin: 20px 0 0 0;
+}
+#wrap #main .section-gallery .gal2 .info .like { grid-area: like; font-size: 2.4em; text-align: center; background: url(../img/heart_off.png) no-repeat; background-position: 50%; }
+#wrap #main .section-gallery .gal2 .info .like.on { background: url(../img/heart_on.png) no-repeat 50%; }
+#wrap #main .section-gallery .gal2 .info .like.on:hover { opacity: 0.5; cursor: pointer;}
+#wrap #main .section-gallery .gal2 .info .name { grid-area: name; font-weight: 600; font-size: 1.2em; }
+#wrap #main .section-gallery .gal2 .info .ment { grid-area: ment; font-size: 1.2em; color: #808080;}
+
+/* 갤러리3 */
+#wrap #main .section-gallery .gal3 { display: inline-block; width: 440px; height: 395.203px; padding: 24px; box-shadow: 1px 1px 4px rgba(0, 0, 0 , 0.2); margin: 8px; border-radius: 8px;}
+#wrap #main .section-gallery .gal3:hover { box-shadow: 1px 1px 4px rgba(0, 0, 0 , 0.5); }
+#wrap #main .section-gallery .gal3 .photo3 { width: 440px; height: 320px; background: url(../img/photo3.jpg) no-repeat 50% 50%; background-size: cover; border-radius: 4px; }
+#wrap #main .section-gallery .gal3 .info 
+{
+    display: grid;  
+    grid-template-columns: 80px 1fr;
+    grid-template-rows: 32px auto;
+    grid-template-areas: 
+        'like name'
+        'like ment';
+    margin: 20px 0 0 0;
+}
+#wrap #main .section-gallery .gal3 .info .like { grid-area: like; font-size: 2.4em; text-align: center; background: url(../img/heart_off.png) no-repeat; background-position: 50%; }
+#wrap #main .section-gallery .gal3 .info .like.on { background: url(../img/heart_on.png) no-repeat 50%; }
+#wrap #main .section-gallery .gal3 .info .like.on:hover { opacity: 0.5; cursor: pointer;}
+#wrap #main .section-gallery .gal3 .info .name { grid-area: name; font-weight: 600; font-size: 1.2em; }
+#wrap #main .section-gallery .gal3 .info .ment { grid-area: ment; font-size: 1.2em; color: #808080;}
+
+/* 갤러리4 */
+#wrap #main .section-gallery .gal4 { display: inline-block; width: 440px; height: 395.203px; padding: 24px; box-shadow: 1px 1px 4px rgba(0, 0, 0 , 0.2); margin: 8px; border-radius: 8px;}
+#wrap #main .section-gallery .gal4:hover { box-shadow: 1px 1px 4px rgba(0, 0, 0 , 0.5); }
+#wrap #main .section-gallery .gal4 .photo4 { width: 440px; height: 320px; background: url(../img/photo4.jpg) no-repeat 50% 50%; background-size: cover; border-radius: 4px; }
+#wrap #main .section-gallery .gal4 .info 
+{
+    display: grid;  
+    grid-template-columns: 80px 1fr;
+    grid-template-rows: 32px auto;
+    grid-template-areas: 
+        'like name'
+        'like ment';
+    margin: 20px 0 0 0;
+}
+#wrap #main .section-gallery .gal4 .info .like { grid-area: like; font-size: 2.4em; text-align: center; background: url(../img/heart_off.png) no-repeat; background-position: 50%; }
+#wrap #main .section-gallery .gal4 .info .like.on { background: url(../img/heart_on.png) no-repeat 50%; }
+#wrap #main .section-gallery .gal4 .info .like.on:hover { opacity: 0.5; cursor: pointer;}
+#wrap #main .section-gallery .gal4 .info .name { grid-area: name; font-weight: 600; font-size: 1.2em; }
+#wrap #main .section-gallery .gal4 .info .ment { grid-area: ment; font-size: 1.2em; color: #808080;}
+
+/* 갤러리5 */
+#wrap #main .section-gallery .gal5 { display: inline-block; width: 440px; height: 395.203px; padding: 24px; box-shadow: 1px 1px 4px rgba(0, 0, 0 , 0.2); margin: 8px; border-radius: 8px;}
+#wrap #main .section-gallery .gal5:hover { box-shadow: 1px 1px 4px rgba(0, 0, 0 , 0.5); }
+#wrap #main .section-gallery .gal5 .photo5 { width: 440px; height: 320px; background: url(../img/photo5.jpg) no-repeat 50% 50%; background-size: auto; border-radius: 4px; }
+#wrap #main .section-gallery .gal5 .info 
+{
+    display: grid;  
+    grid-template-columns: 80px 1fr;
+    grid-template-rows: 32px auto;
+    grid-template-areas: 
+        'like name'
+        'like ment';
+    margin: 20px 0 0 0;
+}
+#wrap #main .section-gallery .gal5 .info .like { grid-area: like; font-size: 2.4em; text-align: center; background: url(../img/heart_off.png) no-repeat; background-position: 50%; }
+#wrap #main .section-gallery .gal5 .info .like.on { background: url(../img/heart_on.png) no-repeat 50%; }
+#wrap #main .section-gallery .gal5 .info .like.on:hover { opacity: 0.5; cursor: pointer;}
+#wrap #main .section-gallery .gal5 .info .name { grid-area: name; font-weight: 600; font-size: 1.2em; }
+#wrap #main .section-gallery .gal5 .info .ment { grid-area: ment; font-size: 1.2em; color: #808080;}
+
