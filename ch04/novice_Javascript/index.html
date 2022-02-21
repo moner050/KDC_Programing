@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 써보기</title>
+</head>
+<body>
+    <h1>안녕하세요.</h1>
+    1초마다 인사말이 바뀌고 있죠?<br>
+    위의 이 제목을 자바스크립트를 사용해 바꿉니다.<br>
+    <!-- 아래 버튼을 눌러주세요.<br><br>
+    <button onclick="changeSalutation()">인사말 바꾸기</button> -->
+    <button onclick="showMyAlert()">알림창 버튼</button>
+
+    <script>
+        // 일반적인 페이지 요소의 내용 바꿔보기
+        // document.querySelector("h1").innerHTML = "반갑습니다";
+        
+        // 대화 상자로 조건 걸어보기
+        // if( confirm("'반갑습니다' 로 바꾸시겠습니까?"))
+        // {
+        //     document.querySelector("h1").innerHTML = "반갑습니다.";
+        // }
+
+        // 사용자가 내용을 직접 바꾸도록 해보기
+        // var salutation = prompt("원하는 인사말을 입력하세요.");
+        // document.querySelector("h1").innerHTML = salutation;
+
+        // 버튼을 눌러서 원하는 인사말 바꾸게 해보기
+        // function changeSalutation () 
+        // {
+        //     var salutation = prompt("원하는 인사말을 입력하세요.");
+        //     document.querySelector("h1").innerHTML = salutation;
+        // }
+
+        // 배열을 이용해 1초마다 인사말 바뀌게 해보기
+        var salutations = ["안녕하세요", "반갑습니다"];
+        var i = 0;
+        setInterval(function () 
+        {
+            i = 1 - i;
+            document.querySelector("h1").innerHTML = salutations[i];
+        }, 1000);
+
+        // 버튼을 누르면 알림창이 뜨게 하기
+        function showMyAlert()
+        {
+            alert("알림창이 나타났습니다.");
+        }
+    </script>
+</body>
+</html>
