@@ -68,11 +68,120 @@ function updateMyInfo()
     showMyInfo();
 }
 
+var sorts = 
+{
+    recent: function (a, b) { return (a.idx > b.idx) ? -1 : 1 },
+    like: function (a, b) { return (a.likes > b.likes) ? -1 : 1 }
+}
+var sort = sorts.like;
 
+var filters = 
+{
+    all: function (it) { return true; },
+    mine: function (it) { return it.user_id === my_info.id; },
+    like: function (it) { return my_info.like.indexOf(it.idx) > -1; },
+    follow: function (it) { return my_info.follow.indexOf(it.user_id) > -1; }
+}
+var filter = filters.all;
 
+function setSort(_sort)
+{
+    document.querySelectorAll("#sorts li").forEach(function (sortLi)
+    {
+        sortLi.classList.remove("on");
+    });
+    document.querySelector("#sorts li." + _sort).classList.add("on");
+
+    sort = sorts[_sort];
+    showPhotos();
+}
+
+function setFilter(_filter)
+{
+    document.querySelectorAll("#filters li").forEach(function (sortLi)
+    {
+        sortLi.classList.remove("on");
+    });
+    document.querySelector("#filters li." + _filter).classList.add("on");
+
+    filter = filters[_filter];
+    showPhotos();
+}
+
+// 사진들 보기에서 사진과 좋아요, 이름, 소개 보여주기
+function showPhotos ()
+{
+    var existingNodes = document.querySelectorAll("article:not(.hidden)");
+
+    existingNodes.forEach(function (existingNodes)
+    {
+        existingNodes.remove();
+    });
+
+    var gallery = document.querySelector("#gallery");
+
+    var filtered = photos.filter(filter);
+    filtered.sort(sort);
+
+    filtered.forEach(function (photo)
+    {
+        var photoNode = document.querySelector("article.hidden").cloneNode(true);
+        photoNode.classList.remove("hidden");
+        photoNode.querySelector(".author").innerHTML = photo.user_name;
+        photoNode.querySelector(".desc").innerHTML = photo.description;
+        photoNode.querySelector(".like").innerHTML = photo.likes;
+
+        if(my_info.like.indexOf(photo.idx) > -1)
+        {
+            photoNode.querySelector(".like").classList.add("on");
+        }
+
+        photoNode.querySelector(".photo").style.backgroundImage = "url('./img/photo/" + photo.file_name +"')";
+        
+        photoNode.querySelector(".like").addEventListener('click', function()
+        {
+            toggleLike(photo.idx);
+        });
+        
+        gallery.append(photoNode);
+    });
+}
+
+function toggleLike (idx)
+{
+    if(my_info.like.indexOf(idx) === -1)
+    {
+        my_info.like.push(idx);
+        for(var i = 0; i < photos.length; i++)
+        {
+            if(photos[i].idx === idx)
+            {
+                photos[i].likes++;
+                break;
+            }
+        }
+    }
+    else
+    {
+        my_info.like = my_info.like.filter(function(it)
+        {
+            return it !== idx;
+        });
+        for(var i = 0; i < photos.length; i++)
+        {
+            if(photos[i].idx === idx)
+            {
+                photos[i].likes--;
+                break;
+            }
+        }
+    }
+    showPhotos();
+}
 
 // 모든 함수 실행
 function init()
 {
     showMyInfo();
+    showPhotos();
 }
